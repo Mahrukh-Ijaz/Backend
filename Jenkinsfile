@@ -22,7 +22,7 @@ pipeline {
     stage('Test Code' ) {
             steps {
                 sh 'docker container run -p 9090:8080 --name backendNode -d mahrukhijaz/backend:latest'
-                sh 'curl -I http://localhost:9090'
+                sh 'curl -I http://0.0.0.0:9090'
             }
         }
 
