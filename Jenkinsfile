@@ -20,11 +20,10 @@ pipeline {
     }
 
     stage('Test Code' ) {
-                agent {
-                docker { image 'mahrukhijaz/backend:latest' }
-            }
             steps {
-                sh 'backend --version'
+                sh 'docker container rm -f node'
+                sh 'docker container run -p 8001:8080 --name node -d mahrukhijaz/backend:latest'
+                sh 'curl -I http://localhost:8001'
             }
         }
 
