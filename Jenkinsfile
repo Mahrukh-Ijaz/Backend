@@ -21,8 +21,8 @@ pipeline {
 
     stage('Test Code' ) {
             steps {
-                sh 'docker container rm -f backendNode'
-                sh 'docker container run -p 9090:8080 --name backendNode -d mahrukhijaz/backend:latest'
+                
+                sh 'docker container run -p 9090:8080 --name backendNode1 -d mahrukhijaz/backend:latest'
                 sh 'curl -I http://0.0.0.0:9090/hello'
             }
         }
