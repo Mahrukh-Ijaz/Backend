@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registry = "Mahrukh-Ijaz/Backend"
+    registry = "mahrukhijaz/backend"
     registryCredential = 'docker-creds'
     dockerImage = ''
   }
@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Cloning Git') {
       steps {
-        git 'https://github.com/Mahrukh-Ijaz/Backend.git'
+        git 'https://github.com/mahrukhijaz/backend.git'
       }
     }
     stage('Building image') {
@@ -21,7 +21,7 @@ pipeline {
 
     stage('Test Code' ) {
                 agent {
-                docker { image 'Mahrukh-Ijaz/backend:latest' }
+                docker { image 'mahrukhijaz/backend:latest' }
             }
             steps {
                 sh 'backend --version'
