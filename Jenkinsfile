@@ -21,10 +21,10 @@ pipeline {
 
     stage('Test Code' ) {
                 agent {
-                docker { image 'Mahrukh-Ijaz/Backend:latest' }
+                docker { image 'Mahrukh-Ijaz/backend:latest' }
             }
             steps {
-                sh 'Backend --version'
+                sh 'backend --version'
             }
         }
 
